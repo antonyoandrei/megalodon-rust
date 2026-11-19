@@ -1,0 +1,24 @@
+name: Close external pull requests
+
+# This is a personal project: pull requests from other accounts are closed with
+# a short note. The job never checks out or runs code from the pull request.
+on:
+  pull_request_target:
+    types: [opened, reopened]
+
+permissions: {}
+
+jobs:
+  close:
+    if: github.event.pull_request.user.login != github.repository_owner
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    permissions:
+      pull-requests: write
+    steps:
+      - name: Close with a note
+        env:
+          GH_TOKEN: ${{ github.token }}
+          PR_URL: ${{ github.event.pull_request.html_url }}
+        run: |
+          gh pr close "$PR_URL" --comment "Gracias, pero este es un proyecto personal y no acepta contribuciones. Puedes mantener tus cambios en tu fork (consulta CONTRIBUTING.md y LICENSE)."

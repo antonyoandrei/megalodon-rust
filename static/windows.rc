@@ -1,0 +1,22 @@
+1 ICON "static/megalodon.ico"
+1 VERSIONINFO
+FILEVERSION MEGALODON_VERSION_NUM
+PRODUCTVERSION MEGALODON_VERSION_NUM
+FILEOS 0x40004
+FILETYPE 1
+BEGIN
+  BLOCK "StringFileInfo"
+  BEGIN
+    BLOCK "040904B0"
+    BEGIN
+      VALUE "FileDescription", "Megalodon\0"
+      VALUE "ProductName", "Megalodon\0"
+      VALUE "ProductVersion", "MEGALODON_VERSION_TEXT\0"
+      VALUE "FileVersion", "MEGALODON_VERSION_TEXT\0"
+    END
+  END
+  BLOCK "VarFileInfo"
+  BEGIN
+    VALUE "Translation", 0x409, 1200
+  END
+END

@@ -1,0 +1,54 @@
+[package]
+name = "megalodon"
+version = "0.3.6"
+edition = "2024"
+description = "Biblioteca multimedia nativa para Drive, carpetas, WebDAV y Jellyfin"
+license-file = "LICENSE"
+default-run = "megalodon"
+
+[[bin]]
+name = "megalodon-desktop"
+path = "src/native/main.rs"
+required-features = ["desktop"]
+
+[[bin]]
+name = "megalodon-setup"
+path = "src/native/setup.rs"
+required-features = ["desktop"]
+
+[features]
+motion-capture = ["desktop"]
+desktop = ["dep:eframe", "dep:image", "dep:libloading", "dep:windows-sys", "dep:zip", "dep:mslnk", "dep:winreg", "dep:mdns-sd", "dep:rust_cast", "dep:roxmltree", "dep:if-addrs", "dep:getrandom", "dep:native-tls", "dep:protobuf", "dep:async-stream", "dep:sha2", "dep:time"]
+
+[dependencies]
+axum = "0.8"
+tokio = { version = "1", features = ["macros", "rt-multi-thread", "signal", "fs"] }
+reqwest = { version = "0.12", features = ["json", "stream", "blocking"] }
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+maud = "0.27"
+dotenvy = "0.15"
+unicode-normalization = "0.1"
+eframe = { version = "=0.33.3", default-features = false, features = ["glow", "default_fonts", "accesskit", "x11", "wayland"], optional = true }
+image = { version = "0.25", default-features = false, features = ["png", "jpeg", "webp"], optional = true }
+libloading = { version = "0.8", optional = true }
+zip = { version = "2", default-features = false, features = ["deflate"], optional = true }
+mslnk = { version = "0.1", optional = true }
+winreg = { version = "0.55", optional = true }
+mdns-sd = { version = "0.22", optional = true }
+rust_cast = { version = "0.21", features = ["cast"], optional = true }
+roxmltree = { version = "0.21", optional = true }
+if-addrs = { version = "0.15", optional = true }
+getrandom = { version = "0.3", optional = true }
+native-tls = { version = "0.2", optional = true }
+protobuf = { version = "3.7", optional = true }
+async-stream = { version = "0.3", optional = true }
+windows-sys = { version = "0.61", features = ["Win32_Security_Cryptography", "Win32_System_Memory", "Win32_Foundation", "Win32_UI_WindowsAndMessaging", "Win32_System_Threading", "Win32_System_Diagnostics_ToolHelp", "Win32_System_Com", "Win32_UI_Shell", "Win32_UI_Shell_Common", "Win32_UI_Controls_Dialogs"], optional = true }
+
+sha2 = { version = "0.10.9", optional = true }
+time = { version = "0.3", features = ["parsing"], optional = true }
+
+[profile.release]
+lto = "thin"
+strip = true
+

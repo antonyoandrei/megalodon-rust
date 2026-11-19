@@ -1,0 +1,27 @@
+[package]
+name = "megalodon-ui"
+version = "0.1.0"
+edition = "2024"
+publish = false
+
+[lib]
+crate-type = ["cdylib", "rlib"]
+
+[dependencies]
+wasm-bindgen = "=0.2.130"
+wasm-bindgen-futures = "0.4"
+js-sys = "0.3"
+web-sys = { version = "0.3", features = [
+  "Window", "Document", "Element", "HtmlElement", "HtmlImageElement",
+  "HtmlButtonElement", "Node", "NodeList", "HtmlCollection", "Event", "EventTarget",
+  "MouseEvent", "KeyboardEvent", "CssStyleDeclaration", "DomRect", "Location",
+  "ScrollToOptions", "ScrollBehavior", "MediaQueryList", "History", "IntersectionObserver",
+  "IntersectionObserverEntry", "HtmlMediaElement", "RequestInit", "Response"
+] }
+
+[profile.release]
+opt-level = "s"
+lto = true
+codegen-units = 1
+panic = "abort"
+strip = "debuginfo"

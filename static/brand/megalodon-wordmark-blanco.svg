@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="928" height="136" viewBox="0 0 928 136" role="img" aria-labelledby="wordmark-title">
+  <title id="wordmark-title">MEGALODON</title>
+  <g fill="#FFFFFF" fill-rule="evenodd">
+    <path id="letter-m-1" d="M0 100V0H22L50 40L78 0H100V100H78V36L50 74L22 36V100Z" transform="translate(18 18)"/>
+    <path id="letter-e-2" d="M0 0H66V20H22V40H61V60H22V80H66V100H0Z" transform="translate(130 18)"/>
+    <path id="letter-g-3" d="M85.355 14.645A50 50 0 1 0 100 50H54V70H71A29 29 0 1 1 70.506 29.494Z" transform="translate(206 18)"/>
+    <path id="letter-a-4" d="M0 100L38 0H62L100 100H77L69 78Q50 72 31 78L23 100ZM38.5 59H61.5L50 27Z" transform="translate(312 18)"/>
+    <path id="letter-l-5" d="M0 0H22V80H64V100H0Z" transform="translate(420 18)"/>
+    <path id="letter-o-6" d="M50 0A50 50 0 1 1 50 100A50 50 0 1 1 50 0ZM50 21A29 29 0 1 0 50 79A29 29 0 1 0 50 21Z" transform="translate(492 18)"/>
+    <path id="letter-d-7" d="M0 0H42C72 0 92 20 92 50S72 100 42 100H0ZM22 21V79H42C60 79 71 68 71 50S60 21 42 21Z" transform="translate(604 18)"/>
+    <path id="letter-o-8" d="M50 0A50 50 0 1 1 50 100A50 50 0 1 1 50 0ZM50 21A29 29 0 1 0 50 79A29 29 0 1 0 50 21Z" transform="translate(706 18)"/>
+    <path id="letter-n-9" d="M0 100V0H22L70 64V0H92V100H70L22 36V100Z" transform="translate(818 18)"/>
+  </g>
+</svg>
